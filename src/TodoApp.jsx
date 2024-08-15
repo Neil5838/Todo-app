@@ -2,13 +2,12 @@
 import { useState } from "react";
 import { FaHouse } from "react-icons/fa6";
 import { FaTrashCan } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa6";
+// import { FaStar } from "react-icons/fa6";
 
 
 function TodoApp() {
   const [inputData, setInputData] = useState('');
   const [tasks, setTasks] = useState([]);
-  const [fav, setFav] = useState(false);
 
   const handleInput = (e) => {
     setInputData(e.target.value);
@@ -27,9 +26,6 @@ function TodoApp() {
     setTasks(tasks.filter((_, index) => index !== id));
   }
 
-  const toggleFav = () => {
-    setFav(!fav);
-  }
 
 
   return (
@@ -45,10 +41,7 @@ function TodoApp() {
             {tasks.map((task, index) => {
                 return <li key={index} className="bg-gray-600 py-2 px-3 sm:py-3 sm:px-4 rounded-md mb-3 flex justify-between">
                     <p>{task}</p>
-                    <span className="flex gap-2">
-                    <button onClick={() => deleteTask(index)}><FaTrashCan className="text-[0.80rem]"/></button>
-                    <button onClick={toggleFav}><FaStar className={`${fav ? 'text-orange-300' : 'text-white'} text-basis`}/></button>
-                    </span>
+                    <button onClick={() => deleteTask(index)}><FaTrashCan className="text-base"/></button>
                 </li>
             })}
           </ul>
