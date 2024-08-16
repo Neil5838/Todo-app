@@ -23,7 +23,7 @@ function Todo() {
 
         setInputTask('');
     }
-    
+
     const removeTask = (id) => {
         setTasks(tasks.filter((_, index) => index !== id))
     }
@@ -64,7 +64,7 @@ function Todo() {
             {tasks.map((task, index) => {
                 return <div key={index} className="bg-gray-600 py-2 px-3 rounded-md text-fluid-body mb-4 flex justify-between items-center">
                     <p>{task}</p>
-                    <span className="flex items-center space-x-5">
+                    <span className="flex items-center space-x-3 sm:space-x-4">
                       <button className="hover:text-red-500" onClick={() => removeTask(index)}><FaTrashCan/></button>
                       <button onClick={() => handleFav(index)} className={`${isFav ? 'text-orange-500' : 'text-white'} text-xl`}><FaStar/></button>  
                     </span>
