@@ -7,11 +7,10 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        // Fluid text size for the title
-        'title': 'clamp(1.5rem, 2vw + 1rem, 2.5rem)',
-
-        // Fluid text size for the body text
-        'body': 'clamp(1rem, 1.5vw + 0.5rem, 1.125rem)',
+        // Fluid title size
+        'fluid-title': 'clamp(1.25rem, 2vw + 1rem, 2.5rem)',
+        // Fluid body size
+        'fluid-body': 'clamp(1rem, 1.5vw + 0.5rem, 1.125rem)',
       },
     },
   },
